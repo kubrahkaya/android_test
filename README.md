@@ -4,7 +4,7 @@ There is no restriction on the API you can use.
 
 ### Submission
   - Deadline: 3 working days from being given access to this project.
-  - Fork from this repo, make your code changes in the forked repo then when you are ready open a pull request with your code back into this repository.
+  - Fork from this repo, make your code changes in the forked repo then when you are ready open a pull request back to the original repo.
   - Email: pb@bink.com when complete with your GitHub user.
 
 ### Test Content
