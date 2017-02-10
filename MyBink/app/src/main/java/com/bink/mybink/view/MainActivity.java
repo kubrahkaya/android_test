@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             startActivity(new Intent(getApplicationContext(), BarcodeScanActivity.class));
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent(getApplicationContext(), ShowFlagsActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
