@@ -1,15 +1,12 @@
-package com.bink.mybink.view;
+package com.bink.mybink.view.dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -20,6 +17,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.bink.mybink.R;
+import com.bink.mybink.view.BarcodeScanActivity;
+import com.bink.mybink.view.ChangePasswordActivity;
+import com.bink.mybink.view.ShowFlagsActivity;
+import com.bink.mybink.view.dashboard.FirstFragment;
+import com.bink.mybink.view.dashboard.SecondFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

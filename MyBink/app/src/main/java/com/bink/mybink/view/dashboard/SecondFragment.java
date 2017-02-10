@@ -1,4 +1,4 @@
-package com.bink.mybink.view;
+package com.bink.mybink.view.dashboard;
 
 
 import android.os.Bundle;

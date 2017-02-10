@@ -1,13 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bink.mybink.view.FirstFragment">
+    android:isScrollContainer="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.bink.mybink.view.dashboard.FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_fragment_one" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <com.gvillani.pinnedlist.PinnedListLayout
+            android:id="@+id/fragment_matches_pinned_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:fade_effect="true"
+            app:pin_text_color="@color/colorAccent"
+            app:pin_text_size="30sp"
+            app:pin_vertical_position="top"
+            app:type="text">
+
+        </com.gvillani.pinnedlist.PinnedListLayout>
+
+    </FrameLayout>
+</android.support.v4.widget.NestedScrollView>
