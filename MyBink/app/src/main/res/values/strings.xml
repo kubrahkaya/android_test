@@ -20,4 +20,13 @@
     <string name="hello_fragment_one">Hello fragment 1</string>
     <string name="hello_fragment_two">Hello fragment 2</string>
 
+    <string name="title_1">Loyality card</string>
+    <string name="title_2">Favorite card</string>
+    <string name="title_3">Fancy card</string>
+    <string name="title_4">Trend card</string>
+
+    <string name="text_1">This is my loyality card app.</string>
+
+    <string name="add_card">Add Card</string>
+
 </resources>
