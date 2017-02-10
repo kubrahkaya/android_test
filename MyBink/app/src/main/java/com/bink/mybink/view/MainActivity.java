@@ -4,6 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,15 +21,25 @@ import android.view.MenuItem;
 
 import com.bink.mybink.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        initializeScreen();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -34,6 +49,16 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void initializeScreen() {
+        ViewPager viewPager = (ViewPager) findViewById(R.id.activity_dashboard_pager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.activity_dashboard_tab_layout);
+
+        DashboardSectionPagerAdapter adapter = new DashboardSectionPagerAdapter(getSupportFragmentManager());
+        viewPager.setOffscreenPageLimit(3);
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -78,18 +103,70 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(), BarcodeScanActivity.class));
         } else if (id == R.id.nav_gallery) {
             startActivity(new Intent(getApplicationContext(), ShowFlagsActivity.class));
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            startActivity(new Intent(getApplicationContext(), ChangePasswordActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public class DashboardSectionPagerAdapter extends FragmentStatePagerAdapter {
+
+        public DashboardSectionPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        /**
+         * Use positions (0 and 1) to find and instantiate fragments with newInstance()
+         *
+         * @param position
+         */
+        @Override
+        public Fragment getItem(int position) {
+
+            Fragment fragment = null;
+
+            /**
+             * Set fragment to different fragments depending on position in ViewPager
+             */
+            switch (position) {
+                case 0:
+                    fragment = FirstFragment.newInstance();
+                    break;
+                case 1:
+                    fragment = SecondFragment.newInstance();
+                    break;
+                default:
+                    fragment = FirstFragment.newInstance();
+                    break;
+            }
+
+            return fragment;
+        }
+
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        /**
+         * Set string resources as titles for each fragment by it's position
+         *
+         * @param position
+         */
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "First";
+                case 1:
+                    return "Second";
+                default:
+                    return "First";
+            }
+        }
     }
 }

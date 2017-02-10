@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MyBink</string>
+    <string name="dev_name">Kubra</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -8,4 +9,15 @@
 
     <string name="scan_barcode">Scan barcode</string>
     <string name="show_countries">Show Countries</string>
+    <string name="change_password">Change password</string>
+
+    <string name="reset_password_description">Renew your password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="new_password_again">New Password Again</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_fragment_one">Hello fragment 1</string>
+    <string name="hello_fragment_two">Hello fragment 2</string>
+
 </resources>

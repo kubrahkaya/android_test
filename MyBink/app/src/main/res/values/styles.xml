@@ -23,4 +23,36 @@
         <item name="windowActionBarOverlay">true</item>
     </style>
 
+    <style name="bold_textview">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">@dimen/content_padding_dialog</item>
+        <item name="android:paddingRight">@dimen/content_padding_dialog</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="ResetPassword" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/darkGray</item>
+        <item name="android:paddingLeft">@dimen/content_padding_dialog</item>
+        <item name="android:paddingRight">@dimen/content_padding_dialog</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
 </resources>

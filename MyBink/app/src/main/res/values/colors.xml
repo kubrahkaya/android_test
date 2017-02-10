@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#008073</color>
     <color name="colorAccent">#006e64</color>
     <color name="actionbar_opacity">#33000000</color>
+    <color name="lightGray">#d4d8dd</color>
+    <color name="darkGray">#707070</color>
 
 </resources>
